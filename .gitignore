@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local videos and generated 2D inputs
+videos/*
+!videos/README.md
+2D/input/*
+!2D/input/README.md
+
+# 2D generated outputs
+2D/outputs/
+2D/_temp_pose_inputs/
+2D/crops/
+2D/*.json
+2D/*.csv
+2D/*.mp4
+2D/botsort_reid.yaml
+
+# 3D generated outputs
+3D/results/*
+!3D/results/README.md
+
+# ML/model/artifact files
+*.pt
+*.pth
+*.pkl
+*.npz
+*.blend
+*.blend1
+*.fbx
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
