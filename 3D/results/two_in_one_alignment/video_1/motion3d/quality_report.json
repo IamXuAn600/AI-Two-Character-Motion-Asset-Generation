@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "frame_count": 987,
+    "fps": 30.0,
+    "method": "WHAM SMPL/world initialization + Two-in-One pair refinement",
+    "world_alignment_mode": "pair_centric_world",
+    "pair_occlusion_frames": 3,
+    "interaction_event_count": 73,
+    "mean_pair_root_distance_m": 1.1878801584243774,
+    "min_pair_root_distance_m": 0.29999974370002747
+  },
+  "roles": {
+    "character_A": {
+      "frames": 987,
+      "visible_joint_ratio": 0.5773517262878965,
+      "mean_velocity_mps": 0.7075875401496887,
+      "p95_velocity_mps": 2.1086363792419434,
+      "mean_acceleration": 8.920907020568848,
+      "p95_acceleration": 27.593582153320312,
+      "mean_bone_length_cv": 0.03113374311476946,
+      "max_ground_penetration_m": 0.0871971845626831,
+      "mean_contact_foot_speed_mps": 0.09953030819657067,
+      "foot_contact_frames": 209
+    },
+    "character_B": {
+      "frames": 987,
+      "visible_joint_ratio": 0.3464655911464422,
+      "mean_velocity_mps": 0.7254452705383301,
+      "p95_velocity_mps": 2.295994281768799,
+      "mean_acceleration": 9.451860427856445,
+      "p95_acceleration": 31.37490463256836,
+      "mean_bone_length_cv": 0.0308684216812253,
+      "max_ground_penetration_m": 0.07355700433254242,
+      "mean_contact_foot_speed_mps": 0.08903534791596389,
+      "foot_contact_frames": 193
+    }
+  },
+  "notes": [
+    "Visible masks and confidence are preserved so future Masked InterVAE/InterLDM modules can use the same exports."
+  ]
+}

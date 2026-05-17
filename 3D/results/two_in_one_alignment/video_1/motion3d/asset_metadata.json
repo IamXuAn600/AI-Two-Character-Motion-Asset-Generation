@@ -1,0 +1,761 @@
+{
+  "metadata": {
+    "source_video": "D:\\YAOYAO\\Industrial Project\\Two_character\\videos\\video_1.mp4",
+    "source_2d": "engineering_2d_for_wham",
+    "fps": 30.0,
+    "frame_count": 987,
+    "frame_width": 1280,
+    "frame_height": 832,
+    "coordinate_system": "meters, Y-up, floor at Y=0, X/Z horizontal",
+    "method_steps": [
+      "WHAM-compatible initialization",
+      "world alignment",
+      "Two-in-One pair representation",
+      "occlusion mask generation",
+      "masked interpolation and temporal smoothing",
+      "contact and physical consistency refinement",
+      "asset-oriented export"
+    ],
+    "initializer": {
+      "requested_backend": "wham",
+      "backend": "wham",
+      "source_format": "official_pickle",
+      "source_path": "D:\\YAOYAO\\Industrial Project\\Two_character\\3D\\results\\wham_visualizations\\video_1\\wham_output.pkl",
+      "subjects": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "local_only": false
+    },
+    "world_alignment": {
+      "mode": "pair_centric_world",
+      "unit": "meter",
+      "up_axis": "Y",
+      "floor_y": 0.0,
+      "source_floor_offset": -0.8587446808815002,
+      "origin_xz_before_alignment": [
+        4.228589057922363,
+        1.053776502609253
+      ],
+      "x_axis_before_alignment": [
+        -0.38900047540664673,
+        -0.921237587928772
+      ],
+      "z_axis_before_alignment": [
+        0.921237587928772,
+        -0.38900047540664673
+      ],
+      "axis_definition": "+X points from character_A root toward character_B root; +Z is the horizontal perpendicular.",
+      "scale_factors": {
+        "character_A": 0.9963382818114016,
+        "character_B": 1.0036887323855364
+      },
+      "estimated_height_before": {
+        "character_A": 1.8389171361923218,
+        "character_B": 1.8254499435424805
+      },
+      "estimated_height_after": {
+        "character_A": 1.8331174850463867,
+        "character_B": 1.8318921327590942
+      },
+      "target_pair_height": 1.8321835398674011,
+      "post_refine_floor_offset": 0.013558227190515026,
+      "estimated_height_final": {
+        "character_A": 1.8276145458221436,
+        "character_B": 1.7519522905349731
+      },
+      "final_floor_y": 0.0
+    }
+  },
+  "engine_import": {
+    "unit": "meter",
+    "up_axis": "Y",
+    "root_motion": {
+      "character_A": {
+        "translation_source": "root_translation",
+        "yaw_source": "root_yaw"
+      },
+      "character_B": {
+        "translation_source": "root_translation",
+        "yaw_source": "root_yaw"
+      }
+    },
+    "ik_targets": {
+      "character_A": {
+        "left_hand": "left_wrist",
+        "right_hand": "right_wrist",
+        "left_foot": "left_ankle",
+        "right_foot": "right_ankle"
+      },
+      "character_B": {
+        "left_hand": "left_wrist",
+        "right_hand": "right_wrist",
+        "left_foot": "left_ankle",
+        "right_foot": "right_ankle"
+      }
+    }
+  },
+  "constraints": [
+    {
+      "type": "attach",
+      "event_type": "hand_hand",
+      "start_frame": 34,
+      "end_frame": 47,
+      "a_joint": "left_wrist",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 159,
+      "end_frame": 163,
+      "a_joint": "right_wrist",
+      "b_joint": "left_shoulder",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 169,
+      "end_frame": 176,
+      "a_joint": "right_wrist",
+      "b_joint": "left_shoulder",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 187,
+      "end_frame": 203,
+      "a_joint": "right_wrist",
+      "b_joint": "left_shoulder",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 126,
+      "end_frame": 136,
+      "a_joint": "right_wrist",
+      "b_joint": "right_shoulder",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 203,
+      "end_frame": 209,
+      "a_joint": "right_wrist",
+      "b_joint": "right_shoulder",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 69,
+      "end_frame": 73,
+      "a_joint": "right_wrist",
+      "b_joint": "left_hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 81,
+      "end_frame": 94,
+      "a_joint": "right_wrist",
+      "b_joint": "left_hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 102,
+      "end_frame": 105,
+      "a_joint": "right_wrist",
+      "b_joint": "left_hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 118,
+      "end_frame": 122,
+      "a_joint": "right_wrist",
+      "b_joint": "left_hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 180,
+      "end_frame": 184,
+      "a_joint": "right_wrist",
+      "b_joint": "left_hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 70,
+      "end_frame": 76,
+      "a_joint": "right_wrist",
+      "b_joint": "right_hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 92,
+      "end_frame": 95,
+      "a_joint": "right_wrist",
+      "b_joint": "right_hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 119,
+      "end_frame": 125,
+      "a_joint": "right_wrist",
+      "b_joint": "right_hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 70,
+      "end_frame": 75,
+      "a_joint": "right_wrist",
+      "b_joint": "hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 80,
+      "end_frame": 94,
+      "a_joint": "right_wrist",
+      "b_joint": "hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 103,
+      "end_frame": 106,
+      "a_joint": "right_wrist",
+      "b_joint": "hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 119,
+      "end_frame": 124,
+      "a_joint": "right_wrist",
+      "b_joint": "hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "a_hand_b_body",
+      "start_frame": 180,
+      "end_frame": 183,
+      "a_joint": "right_wrist",
+      "b_joint": "hip",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 35,
+      "end_frame": 38,
+      "a_joint": "left_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 56,
+      "end_frame": 93,
+      "a_joint": "left_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 115,
+      "end_frame": 120,
+      "a_joint": "left_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 128,
+      "end_frame": 137,
+      "a_joint": "left_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 195,
+      "end_frame": 206,
+      "a_joint": "left_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 0,
+      "end_frame": 28,
+      "a_joint": "left_hip",
+      "b_joint": "right_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 61,
+      "end_frame": 82,
+      "a_joint": "right_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 91,
+      "end_frame": 94,
+      "a_joint": "right_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 129,
+      "end_frame": 136,
+      "a_joint": "right_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 180,
+      "end_frame": 203,
+      "a_joint": "right_hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 24,
+      "end_frame": 37,
+      "a_joint": "right_hip",
+      "b_joint": "right_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 57,
+      "end_frame": 93,
+      "a_joint": "hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 127,
+      "end_frame": 137,
+      "a_joint": "hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 184,
+      "end_frame": 205,
+      "a_joint": "hip",
+      "b_joint": "left_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "attach",
+      "event_type": "b_hand_a_body",
+      "start_frame": 0,
+      "end_frame": 29,
+      "a_joint": "hip",
+      "b_joint": "right_wrist",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 5,
+      "end_frame": 24,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 478,
+      "end_frame": 483,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 515,
+      "end_frame": 517,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 523,
+      "end_frame": 539,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 545,
+      "end_frame": 548,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 629,
+      "end_frame": 652,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 696,
+      "end_frame": 703,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 725,
+      "end_frame": 728,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 874,
+      "end_frame": 884,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 891,
+      "end_frame": 895,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 919,
+      "end_frame": 923,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 962,
+      "end_frame": 970,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 38,
+      "end_frame": 41,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 499,
+      "end_frame": 504,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 512,
+      "end_frame": 538,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 583,
+      "end_frame": 592,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 622,
+      "end_frame": 631,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 635,
+      "end_frame": 642,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 716,
+      "end_frame": 722,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 857,
+      "end_frame": 862,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 910,
+      "end_frame": 912,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 975,
+      "end_frame": 986,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 0,
+      "end_frame": 27,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 143,
+      "end_frame": 153,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 226,
+      "end_frame": 240,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 245,
+      "end_frame": 251,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 454,
+      "end_frame": 470,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 474,
+      "end_frame": 481,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 889,
+      "end_frame": 897,
+      "a_joint": "left_ankle",
+      "b_joint": "left_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 146,
+      "end_frame": 151,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 181,
+      "end_frame": 192,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 228,
+      "end_frame": 236,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 356,
+      "end_frame": 358,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 396,
+      "end_frame": 419,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 424,
+      "end_frame": 431,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 448,
+      "end_frame": 464,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 472,
+      "end_frame": 478,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 964,
+      "end_frame": 972,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    },
+    {
+      "type": "foot_lock",
+      "event_type": "foot_ground",
+      "start_frame": 984,
+      "end_frame": 986,
+      "a_joint": "right_ankle",
+      "b_joint": "right_ankle",
+      "stiffness": 0.65
+    }
+  ]
+}

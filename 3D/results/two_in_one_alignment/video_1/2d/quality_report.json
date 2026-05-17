@@ -1,0 +1,105 @@
+{
+  "summary": {
+    "fps": 30.0,
+    "frame_count": 987,
+    "frame_width": 1280,
+    "frame_height": 832,
+    "keypoint_count": 26,
+    "occlusion_policy": "off",
+    "interpolated_score_scale": 0.45
+  },
+  "checklist": {
+    "video_preprocessing": "fps/resolution/frame_index recorded in metadata and per-frame records",
+    "detection": "two stable role slots are exported every frame; source detector bbox score is preserved",
+    "tracking": "exported tracker_id/source_tracker_id/stable_track_id are fixed to 0/1; raw detector IDs are preserved as raw_detector_tracker_id",
+    "bbox_postprocess": "tracker bbox and pose crop bbox are both exported; WHAM xyxy/xywh are generated",
+    "pose_2d": "raw/smoothed keypoints, confidence, masks, and per-keypoint source are exported",
+    "missing_handling": "missing/occluded joints are masked; interpolated joints are low confidence",
+    "temporal_smoothing": "bidirectional EMA reduces jitter without causal lag; raw observations remain available",
+    "formats": "COCO17, OpenPose BODY25, and WHAM-style 2D JSON are generated",
+    "quality_report": "coverage, ID switches, confidence, occlusion segments, and bbox jitter are reported",
+    "visualization": "preview.mp4 overlays observed skeleton; low-confidence joints are hollow and not connected"
+  },
+  "roles": {
+    "character_A": {
+      "role_id": 0,
+      "stable_track_id": 0,
+      "frames": 987,
+      "visible_frames": 982,
+      "visible_ratio": 0.9949341438703141,
+      "recovered_frames": 25,
+      "tracker_ids": [
+        0
+      ],
+      "track_id_switches": 0,
+      "source_tracker_ids": [
+        0
+      ],
+      "source_track_id_switches": 0,
+      "raw_detector_tracker_ids": [
+        2,
+        17
+      ],
+      "raw_detector_track_id_switches": 1,
+      "mean_raw_confidence": 0.8185113462392307,
+      "mean_smoothed_confidence": 0.8147703682487726,
+      "valid_keypoint_ratio": 0.994388590133271,
+      "interpolated_keypoints": 144,
+      "held_keypoints": 0,
+      "missing_keypoints": 0,
+      "occlusion_segments": [
+        {
+          "start_frame": 571,
+          "end_frame": 575,
+          "length": 5
+        }
+      ],
+      "max_occlusion_length": 5,
+      "mean_bbox_center_jump_norm": 0.0030801051901718415,
+      "p95_bbox_center_jump_norm": 0.008269921421106788
+    },
+    "character_B": {
+      "role_id": 1,
+      "stable_track_id": 1,
+      "frames": 987,
+      "visible_frames": 978,
+      "visible_ratio": 0.9908814589665653,
+      "recovered_frames": 141,
+      "tracker_ids": [
+        1
+      ],
+      "track_id_switches": 0,
+      "source_tracker_ids": [
+        1
+      ],
+      "source_track_id_switches": 0,
+      "raw_detector_tracker_ids": [
+        1,
+        2,
+        9
+      ],
+      "raw_detector_track_id_switches": 2,
+      "mean_raw_confidence": 0.8108428690860284,
+      "mean_smoothed_confidence": 0.8041924016054867,
+      "valid_keypoint_ratio": 0.9897903514924792,
+      "interpolated_keypoints": 262,
+      "held_keypoints": 0,
+      "missing_keypoints": 0,
+      "occlusion_segments": [
+        {
+          "start_frame": 342,
+          "end_frame": 347,
+          "length": 6
+        },
+        {
+          "start_frame": 351,
+          "end_frame": 353,
+          "length": 3
+        }
+      ],
+      "max_occlusion_length": 6,
+      "mean_bbox_center_jump_norm": 0.0038230699223973734,
+      "p95_bbox_center_jump_norm": 0.012061173363179982
+    }
+  }
+}

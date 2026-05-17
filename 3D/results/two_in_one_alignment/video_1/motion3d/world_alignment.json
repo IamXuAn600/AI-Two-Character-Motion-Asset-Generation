@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "source_video": "D:\\YAOYAO\\Industrial Project\\Two_character\\videos\\video_1.mp4",
+    "source_2d": "engineering_2d_for_wham",
+    "fps": 30.0,
+    "frame_count": 987,
+    "frame_width": 1280,
+    "frame_height": 832,
+    "coordinate_system": "meters, Y-up, floor at Y=0, X/Z horizontal",
+    "method_steps": [
+      "WHAM-compatible initialization",
+      "world alignment",
+      "Two-in-One pair representation",
+      "occlusion mask generation",
+      "masked interpolation and temporal smoothing",
+      "contact and physical consistency refinement",
+      "asset-oriented export"
+    ],
+    "initializer": {
+      "requested_backend": "wham",
+      "backend": "wham",
+      "source_format": "official_pickle",
+      "source_path": "D:\\YAOYAO\\Industrial Project\\Two_character\\3D\\results\\wham_visualizations\\video_1\\wham_output.pkl",
+      "subjects": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "local_only": false
+    },
+    "world_alignment": {
+      "mode": "pair_centric_world",
+      "unit": "meter",
+      "up_axis": "Y",
+      "floor_y": 0.0,
+      "source_floor_offset": -0.8587446808815002,
+      "origin_xz_before_alignment": [
+        4.228589057922363,
+        1.053776502609253
+      ],
+      "x_axis_before_alignment": [
+        -0.38900047540664673,
+        -0.921237587928772
+      ],
+      "z_axis_before_alignment": [
+        0.921237587928772,
+        -0.38900047540664673
+      ],
+      "axis_definition": "+X points from character_A root toward character_B root; +Z is the horizontal perpendicular.",
+      "scale_factors": {
+        "character_A": 0.9963382818114016,
+        "character_B": 1.0036887323855364
+      },
+      "estimated_height_before": {
+        "character_A": 1.8389171361923218,
+        "character_B": 1.8254499435424805
+      },
+      "estimated_height_after": {
+        "character_A": 1.8331174850463867,
+        "character_B": 1.8318921327590942
+      },
+      "target_pair_height": 1.8321835398674011,
+      "post_refine_floor_offset": 0.013558227190515026,
+      "estimated_height_final": {
+        "character_A": 1.8276145458221436,
+        "character_B": 1.7519522905349731
+      },
+      "final_floor_y": 0.0
+    }
+  },
+  "world_alignment": {
+    "mode": "pair_centric_world",
+    "unit": "meter",
+    "up_axis": "Y",
+    "floor_y": 0.0,
+    "source_floor_offset": -0.8587446808815002,
+    "origin_xz_before_alignment": [
+      4.228589057922363,
+      1.053776502609253
+    ],
+    "x_axis_before_alignment": [
+      -0.38900047540664673,
+      -0.921237587928772
+    ],
+    "z_axis_before_alignment": [
+      0.921237587928772,
+      -0.38900047540664673
+    ],
+    "axis_definition": "+X points from character_A root toward character_B root; +Z is the horizontal perpendicular.",
+    "scale_factors": {
+      "character_A": 0.9963382818114016,
+      "character_B": 1.0036887323855364
+    },
+    "estimated_height_before": {
+      "character_A": 1.8389171361923218,
+      "character_B": 1.8254499435424805
+    },
+    "estimated_height_after": {
+      "character_A": 1.8331174850463867,
+      "character_B": 1.8318921327590942
+    },
+    "target_pair_height": 1.8321835398674011,
+    "post_refine_floor_offset": 0.013558227190515026,
+    "estimated_height_final": {
+      "character_A": 1.8276145458221436,
+      "character_B": 1.7519522905349731
+    },
+    "final_floor_y": 0.0
+  }
+}
